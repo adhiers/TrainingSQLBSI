@@ -35,7 +35,7 @@ end
 use TrainingDB
 go
 
-create table Customer(
+create table CustomerTest(
 -- nama-kolom tipe-data attribute
 	Id int identity(1,1) primary key, -- (1,1) start 1 increment 1
 	Name varchar(50) not null,
@@ -101,6 +101,7 @@ create table CarSale(
 -- nama-kolom tipe-data attribute
 	SaleId int identity(1,1) primary key, -- (1,1) start 1 increment 1
 	BuyerName varchar(30) not null,
+	EmployeeName varchar(30) not null,
 	DateSale date not null,
 	SalePrice float not null,
 	MethodSale varchar(10) not null,
@@ -113,9 +114,11 @@ create table MaintenanceLog(
 	CustomerId int identity(1,1) primary key, -- (1,1) start 1 increment 1
 	CustomerName varchar(30) not null,
 	CarModel varchar(20) not null,
+	CarCategory varchar(20) not null,
 	ServiceDate Date not null,
 	ServiceType varchar(30) not null,
-	ServiceCenter varchar(30) not null
+	ServiceCenter varchar(30) not null,
+	ServiceProgress varchar(30) not null
 )
 go
 
