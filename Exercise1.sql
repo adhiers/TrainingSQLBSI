@@ -46,6 +46,8 @@
 use Exercise1
 go
 
+
+
 -- study case 1
 create table Plant(
 -- nama-kolom tipe-data attribute
@@ -54,7 +56,7 @@ create table Plant(
 	City varchar(20) not null,
 	Country varchar(20) not null,
 	Continent varchar(10) not null,
-	TotalArea int not null,
+	TotalArea float not null,
 	YearStartOperation varchar(4) not null,
 )
 go
