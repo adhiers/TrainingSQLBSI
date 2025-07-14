@@ -1,47 +1,47 @@
--- select db
-use master
-go
+---- select db
+--use master
+--go
 
-use TrainingDB
-go
+--use TrainingDB
+--go
 
---create db
-create database Demo01
-go
+----create db
+--create database Demo01
+--go
 
-create database Demo02
-go
-create database Demo03
-go
+--create database Demo02
+--go
+--create database Demo03
+--go
 
--- delete db
-drop database Demo01
-go
+---- delete db
+--drop database Demo01
+--go
 
-drop database if exists Demo01
-go
+--drop database if exists Demo01
+--go
 
------- sys.databases
-select name from sys.databases
+-------- sys.databases
+--select name from sys.databases
 
-if not exists(select name from sys.databases where name='Demo01')
-begin
-	create database Demo01;
-end
+--if not exists(select name from sys.databases where name='Demo01')
+--begin
+--	create database Demo01;
+--end
 
--- go ;
+---- go ;
 
------------------------------
-use TrainingDB
-go
+-------------------------------
+--use TrainingDB
+--go
 
-create table CustomerTest(
--- nama-kolom tipe-data attribute
-	Id int identity(1,1) primary key, -- (1,1) start 1 increment 1
-	Name varchar(50) not null,
-	Email varchar(30)
-)
-go
+--create table CustomerTest(
+---- nama-kolom tipe-data attribute
+--	Id int identity(1,1) primary key, -- (1,1) start 1 increment 1
+--	Name varchar(50) not null,
+--	Email varchar(30)
+--)
+--go
 
 use Exercise1
 go
