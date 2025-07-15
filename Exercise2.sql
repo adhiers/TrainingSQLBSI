@@ -1,11 +1,10 @@
---1. List product names and their list prices from the Production.Product table where the ListPrice is greater than 1000.
-select Name, ListPrice from Production.Product where ListPrice > 1000;
+-- Section 1
 
---2. Find employees in the HumanResources.Employee table who were hired after January 1, 2012.
-select * from HumanResources.Employee where HireDate > '2012-01-01';
 
---3. Display top 10 most expensive products based on ListPrice in descending order.
-select top 10 * from Production.Product order by ListPrice desc;
+-- Section 2
 
---4. Show product names that start with the letter ‘B’ from the Production.Product table.
-select Name from Production.Product where Name like 'b%';
+-- Section 3
+
+-- Section 4
+
+
