@@ -16,4 +16,4 @@ select * from HumanResources.Employee where HireDate > '2012-01-01';
 select top 10 * from Production.Product order by ListPrice desc;
 
 --4
-select * from Production.Product where Name like 'b%';
+select Name from Production.Product where Name like 'b%';
