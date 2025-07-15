@@ -113,10 +113,10 @@ order by SUM(D.OrderQty) desc
 select * from Production.Product;
 select * from Production.ProductSubcategory;
 
-select P.ProductSubcategoryID, count(S.Name) as TotalProduct from Production.Product P
+select S.Name, count(S.ProductCategoryID) as TotalProduct from Production.Product P
 inner join Production.ProductSubcategory S on S.ProductSubcategoryID = P.ProductSubcategoryID
 where P.ListPrice > 500
-group by P.ProductSubcategoryID
+group by S.Name
 
 -- 18. Show the employee with the highest number of orders handled as salesperson
 -- hint use sales.salesorderheader, sales.salesperson, and person.person
