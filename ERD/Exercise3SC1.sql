@@ -1,9 +1,5 @@
 -- Study Case 1
 
-
-use Excercise3
-go
-
 create table CarModel (
     ModelId int identity(1,1) primary key,
 	ModelName varchar(30) not null,
