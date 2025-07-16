@@ -37,9 +37,9 @@ inner join Person.Person P ON P.BusinessEntityID = E.BusinessEntityID
 
 -- 8. List all orders along with the salesperson's full name (if assigned)
 -- hint: use sales.salesorderheader, sales.salesperson, and person.person
---select * from Sales.SalesPerson;
---select * from Sales.SalesOrderHeader;
---select * from Person.Person;
+select * from Sales.SalesPerson;
+select * from Sales.SalesOrderHeader;
+select * from Person.Person;
 select  H.SalesOrderID, concat(P.FirstName, ' ', P.MiddleName, ' ', P.LastName) AS SalesFullName
 from Sales.SalesOrderHeader H 
 left join Sales.SalesPerson S on S.BusinessEntityID = H.SalesPersonID
@@ -78,7 +78,7 @@ select concat(P.FirstName, ' ', P.MiddleName, ' ', P.LastName) AS CustomerFullNa
 from Sales.SalesOrderHeader H
 inner join Sales.Customer C on C.CustomerID = H.CustomerID
 inner join Person.Person P on P.BusinessEntityID = H.CustomerID
-group by P.BusinessEntityID, concat(P.FirstName, ' ', P.MiddleName, ' ', P.LastName)
+group by concat(P.FirstName, ' ', P.MiddleName, ' ', P.LastName)
 
 -- 14. Show the total number of orders per salesperson
 select * from Sales.SalesPerson;
