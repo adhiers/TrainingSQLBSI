@@ -1,9 +1,5 @@
 -- Study Case 2
 
---drop table Employee;
---drop table TrainingCourse;
---drop ;
-
 create table Employee (
     EmployeeId int identity(1,1) primary key,
 	EmployeeName varchar(30) not null,
@@ -28,22 +24,23 @@ create table Instructor(
 )
 
 create table TrainingSession(
+    SessionId int identity(1,1),
     CourseId int,
-    EmployeeId int,
-    primary key (CourseId, EmployeeId),
+    InstructorId int,
+    primary key(SessionId),
     foreign key (CourseId) references TrainingCourse(CourseId),
-    foreign key (EmployeeId) references Employee(EmployeeId)
+    foreign key (InstructorId) references Instructor(InstructorId)
 )
 
 create table ParticipationRecord(
-    RecordId int identity(1,1) primary key,
-    InstructorId int,
+    RecordId int identity(1,1),
     EmployeeId int,
-    CourseId int,
+    SessionId int,
     AttendedDate date not null,
     Assesment bit not null,
     Notes text not null,
-    foreign key (InstructorId) references Instructor(InstructorId),
-    foreign key (EmployeeId) references Employee(EmployeeId),
-    foreign key (CourseId) references TrainingCourse(CourseId)
+    primary key(EmployeeId, SessionId, RecordId),
+    foreign key (SessionId) references TrainingSession(SessionId),
+    foreign key (EmployeeId) references Employee(EmployeeId)
+
 )
