@@ -15,6 +15,8 @@ as
         Person.Person P on HE.BusinessEntityID = P.BusinessEntityID
     JOIN
         Person.EmailAddress EA on P.BusinessEntityID = EA.BusinessEntityID
+    WHERE
+        HE.CurrentFlag = 1
 
 go
 
