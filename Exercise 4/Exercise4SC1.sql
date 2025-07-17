@@ -11,7 +11,7 @@ as
     FROM 
         Production.Product p
     WHERE
-        SellEndDate is not null
+        SellEndDate is null
 
 go
 
