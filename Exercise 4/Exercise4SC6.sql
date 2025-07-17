@@ -20,7 +20,6 @@ as
         CONCAT(P.FirstName, ' ', P.MiddleName, ' ', P.LastName) is not null
     GROUP BY
         CONCAT(P.FirstName, ' ', P.MiddleName, ' ', P.LastName)
-    
 
 go
 
