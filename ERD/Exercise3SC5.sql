@@ -1,21 +1,37 @@
 -- Study Case 5
 
-create table Car(
-	CarId int identity(1,1) primary key,
-
-);
-
 create table Customer(
 	CustomerId int identity(1,1) primary key,
+	CustomerName varchar(50) not null,
+	Email varchar(50),
+	PhoneNumber varchar(20),
+	CustomerAddress text,
+);
 
+create table Car(
+	VIN int primary key,
+	CarType varchar(50) not null,
+	CustomerId int,
+	foreign key (CustomerId) references Customer(CustomerId)
 );
 
 create table WarrantyRegistration(
-	CarId int primary key,
+	WarrantyId int primary key,
+	VIN int UNIQUE not null,
+	PurchaseDate date not null,
+	WarrantyPeriodDays int not null,
+	foreign key (VIN) references Car(VIN)
 
 );
 
 create table WarrantyClaim(
-	ClaimId int identity(1,1) primary key,
-
+	CLaimId int primary key,
+	WarrantyId int,
+	IssueReported text not null,
+	RepairDate date not null,
+	ServiceCenter varchar(50) not null,
+	RepairCost float not null,
+	CostCovered float not null,
+	ClaimStatus varchar(10) not null,
+	foreign key (WarrantyId) references WarrantyRegistration(WarrantyId)
 );
