@@ -41,6 +41,7 @@ create table DealerCarList(
 	DealerCarId varchar(20) primary key,
 	CarId varchar(20),
 	DealerId varchar(20),
+	Stock int,
 	DealerCarPrice float not null,
 	foreign key (CarId) references Car(CarId),
 	foreign key (DealerId) references Dealer(DealerId)
@@ -172,11 +173,11 @@ INSERT INTO SalesPerson VALUES ('SLS004', 'Teguh Setiawan', 'DLR004', '1985-11-3
 INSERT INTO SalesPerson VALUES ('SLS005', 'Sari Puspita', 'DLR005', '1993-07-10', '2021-09-18', 'sari.p@dealer.com', '081234555555');
 
 -- DealerCarList
-INSERT INTO DealerCarList VALUES ('DCL001', 'CAR001', 'DLR001', 360000000);
-INSERT INTO DealerCarList VALUES ('DCL002', 'CAR002', 'DLR002', 405000000);
-INSERT INTO DealerCarList VALUES ('DCL003', 'CAR003', 'DLR003', 315000000);
-INSERT INTO DealerCarList VALUES ('DCL004', 'CAR004', 'DLR004', 365000000);
-INSERT INTO DealerCarList VALUES ('DCL005', 'CAR005', 'DLR005', 335000000);
+INSERT INTO DealerCarList VALUES ('DCL001', 'CAR001', 'DLR001', 2, 360000000);
+INSERT INTO DealerCarList VALUES ('DCL002', 'CAR002', 'DLR002', 3, 405000000);
+INSERT INTO DealerCarList VALUES ('DCL003', 'CAR003', 'DLR003', 3, 315000000);
+INSERT INTO DealerCarList VALUES ('DCL004', 'CAR004', 'DLR004', 4, 365000000);
+INSERT INTO DealerCarList VALUES ('DCL005', 'CAR005', 'DLR005', 6, 335000000);
 
 -- ConsultHistory
 INSERT INTO ConsultHistory VALUES ('CONS001', 'CUST001', 'SLS001', 380000000, '2024-06-01', 'Ingin mobil untuk keluarga');
@@ -231,18 +232,18 @@ INSERT INTO WarrantyClaim VALUES ('CLM001', 'WRT001', 'Bengkel Resmi Jakarta', '
 INSERT INTO WarrantyClaim VALUES ('CLM003', 'WRT004', 'Semarang Motor Service', '2025-03-05', 500000, 'Cek sistem audio');
 
 
---drop table Warranty;
---drop table WarrantyClaim;
---drop table OtherBenefit;
---drop table PaymentHistory;
---drop table Credit;
---drop table Agreement;
---drop table LetterOfIntent;
---drop table TestDriveNego;
---drop table ConsultHistory;
---drop table DealerCarList;
---drop table SalesPerson;
---drop table Car;
---drop table Dealer;
---drop table Customer;
+drop table Warranty;
+drop table WarrantyClaim;
+drop table OtherBenefit;
+drop table PaymentHistory;
+drop table Credit;
+drop table Agreement;
+drop table LetterOfIntent;
+drop table TestDriveNego;
+drop table ConsultHistory;
+drop table DealerCarList;
+drop table SalesPerson;
+drop table Car;
+drop table Dealer;
+drop table Customer;
 
