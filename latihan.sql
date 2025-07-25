@@ -10,6 +10,6 @@ select top 10 * from Production.Product order by ListPrice desc;
 --4. Show product names that start with the letter ‘B’ from the Production.Product table.
 select Name from Production.Product where Name like 'b%';
 
--- pegawai paling muda dan tua
+-- pegawai paling muda dan tuaa
 select top 1 * from HumanResources.Employee order by BirthDate desc
 select top 1 * from HumanResources.Employee order by BirthDate asc
